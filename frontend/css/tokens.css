@@ -1,0 +1,85 @@
+/* ShelfLine design tokens. Every colour in the app comes from this file. */
+:root {
+  /* Brand and neutrals */
+  --teal-700: #0F766E;
+  --teal-800: #115E59;
+  --teal-50: #F0FDFA;
+  --teal-200: #99F6E4;
+  --ink-teal: #0B2E2B;
+  --bg: #F6F8FA;
+  --surface: #FFFFFF;
+  --border: #E2E8F0;
+  --text-strong: #0F172A;
+  --text-body: #334155;
+  --text-muted: #64748B;
+  --arrow: #94A3B8;
+
+  /* Sidebar */
+  --side-text: #CBD5E1;
+  --side-active: #FFFFFF;
+  --side-active-bg: rgba(255, 255, 255, 0.08);
+  --side-bar: #2DD4BF;
+
+  /* Roles */
+  --primary: var(--teal-700);
+  --primary-hover: var(--teal-800);
+  --on-primary: #FFFFFF;
+  --tint: var(--teal-50);
+  --ring: var(--teal-700);
+  --input-border: var(--text-muted);
+  --scrim: rgba(15, 23, 42, 0.5);
+
+  /* Status sets: text / background / border */
+  --safe-text: #166534;     --safe-bg: #DCFCE7;     --safe-border: #86EFAC;
+  --soon-text: #92400E;     --soon-bg: #FEF3C7;     --soon-border: #FCD34D;
+  --expired-text: #991B1B;  --expired-bg: #FEE2E2;  --expired-border: #FCA5A5;
+  --low-text: #9A3412;      --low-bg: #FFEDD5;      --low-border: #FDBA74;
+  --info-text: #075985;     --info-bg: #E0F2FE;     --info-border: #7DD3FC;
+
+  /* Type */
+  --font: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fs-12: 0.75rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-20: 1.25rem;
+  --fs-28: 1.75rem;
+
+  /* Shape and depth */
+  --radius-card: 10px;
+  --radius-control: 8px;
+  --radius-chip: 999px;
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-dialog: 0 10px 30px rgba(15, 23, 42, 0.18);
+
+  /* Spacing on a 4 px grid */
+  --s1: 4px;  --s2: 8px;  --s3: 12px;  --s4: 16px;
+  --s5: 20px; --s6: 24px; --s8: 32px;  --s10: 40px;
+}
+
+/* Dark theme, switched by the toggle in the top bar */
+:root[data-theme="dark"] {
+  --bg: #0B1220;
+  --surface: #111C2E;
+  --border: #1F2D44;
+  --text-strong: #E5E7EB;
+  --text-body: #E5E7EB;
+  --text-muted: #94A3B8;
+  --arrow: #94A3B8;
+
+  --primary: #2DD4BF;
+  --primary-hover: #99F6E4;
+  --on-primary: #0B1220;
+  --tint: rgba(45, 212, 191, 0.1);
+  --ring: #2DD4BF;
+  --input-border: #94A3B8;
+  --scrim: rgba(0, 0, 0, 0.6);
+
+  --safe-text: #86EFAC;     --safe-bg: rgba(134, 239, 172, 0.12);     --safe-border: rgba(134, 239, 172, 0.4);
+  --soon-text: #FCD34D;     --soon-bg: rgba(252, 211, 77, 0.12);      --soon-border: rgba(252, 211, 77, 0.4);
+  --expired-text: #FCA5A5;  --expired-bg: rgba(252, 165, 165, 0.12);  --expired-border: rgba(252, 165, 165, 0.4);
+  --low-text: #FDBA74;      --low-bg: rgba(253, 186, 116, 0.12);      --low-border: rgba(253, 186, 116, 0.4);
+  --info-text: #7DD3FC;     --info-bg: rgba(125, 211, 252, 0.12);     --info-border: rgba(125, 211, 252, 0.4);
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-dialog: 0 10px 30px rgba(0, 0, 0, 0.5);
+}

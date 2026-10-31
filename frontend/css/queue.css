@@ -1,0 +1,48 @@
+/* The queue lanes: FRONT on the left, REAR on the right */
+.lanes { display: flex; flex-direction: column; gap: 16px; }
+
+.lane { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card); box-shadow: var(--shadow-card); }
+.lane-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 16px 20px; border-bottom: 1px solid var(--border); }
+.lane-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; min-width: 0; }
+.lane-name { font-size: var(--fs-16); font-weight: 600; color: var(--text-strong); }
+.lane-strength { color: var(--text-muted); }
+.lane-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.lane-total { color: var(--text-strong); font-weight: 500; font-variant-numeric: tabular-nums; }
+.lane-next { color: var(--text-muted); font-size: var(--fs-12); }
+.lane-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-left: auto; }
+
+.lane-track { display: flex; align-items: stretch; overflow-x: auto; padding: 20px; scroll-padding: 20px; }
+.lane-empty { padding: 24px 20px; color: var(--text-body); display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+
+.batch-card {
+  display: flex; flex-direction: column; flex: 0 0 208px; width: 208px; overflow: hidden;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card);
+}
+.batch-card.is-front { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary); }
+.batch-card.will-use { background: var(--tint); }
+.batch-body { display: flex; flex-direction: column; gap: 8px; padding: 12px 12px 8px; flex: 1 1 auto; }
+.badges { display: flex; flex-wrap: wrap; gap: 4px; min-height: 24px; }
+.badge { padding: 2px 8px; border: 1px solid var(--primary); border-radius: var(--radius-chip); font-size: var(--fs-12); font-weight: 600; white-space: nowrap; }
+.badge-front { background: var(--primary); color: var(--on-primary); }
+.badge-rear { background: transparent; color: var(--primary); }
+.batch-no { font-size: var(--fs-16); font-weight: 600; color: var(--text-strong); }
+.kv { display: flex; justify-content: space-between; gap: 8px; margin: 0; }
+.kv dt { color: var(--text-muted); }
+.kv dd { margin: 0; color: var(--text-strong); font-variant-numeric: tabular-nums; text-align: right; }
+.use-note { font-size: var(--fs-12); font-weight: 600; color: var(--primary); }
+
+.strip { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-top: 1px solid; font-size: var(--fs-12); font-weight: 600; }
+.st-safe { color: var(--safe-text); background: var(--safe-bg); border-color: var(--safe-border); }
+.st-soon { color: var(--soon-text); background: var(--soon-bg); border-color: var(--soon-border); }
+.st-expired { color: var(--expired-text); background: var(--expired-bg); border-color: var(--expired-border); }
+
+.batch-actions { display: flex; gap: 8px; padding: 12px; }
+.batch-actions .btn { flex: 1 1 0; }
+
+.queue-arrow { display: flex; align-items: center; justify-content: center; flex: 0 0 40px; color: var(--arrow); }
+
+/* Motion: new batch slides in at the rear, sold or removed batch slides out at the front */
+.batch-card.entering { animation: slide-in-rear 250ms ease-out; }
+.batch-card.leaving { animation: slide-out-front 250ms ease-in forwards; }
+@keyframes slide-in-rear { from { opacity: 0; transform: translateX(32px); } to { opacity: 1; transform: none; } }
+@keyframes slide-out-front { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateX(-32px); } }
